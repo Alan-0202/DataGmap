@@ -1,0 +1,42 @@
+<%= form_with(model: countrydb, local: true) do |form| %>
+  <% if countrydb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(countrydb.errors.count, "error") %> prohibited this countrydb from being saved:</h2>
+
+      <ul>
+        <% countrydb.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :countryid %>
+    <%= form.text_field :countryid %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carbonten %>
+    <%= form.text_field :carbonten %>
+  </div>
+
+  <div class="field">
+    <%= form.label :carboneight %>
+    <%= form.text_field :carboneight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gdpten %>
+    <%= form.text_field :gdpten %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gdpeight %>
+    <%= form.text_field :gdpeight %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

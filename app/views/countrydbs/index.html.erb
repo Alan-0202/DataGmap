@@ -1,0 +1,44 @@
+
+<head class="head">
+
+  <div class="wang">
+
+
+
+    <p id="notice"><%= notice %></p>
+
+    <h1>Countrydbs</h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Countryid</th>
+          <th>Carbonten</th>
+          <th>Carboneight</th>
+          <th>Gdpten</th>
+          <th>Gdpeight</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @countrydbs.each do |countrydb| %>
+          <tr>
+            <td><%= countrydb.countryid %></td>
+            <td><%= countrydb.carbonten %></td>
+            <td><%= countrydb.carboneight %></td>
+            <td><%= countrydb.gdpten %></td>
+            <td><%= countrydb.gdpeight %></td>
+<!--            <td><%#= link_to 'Show', countrydb %></td>-->
+<!--            <td><%#= link_to 'Edit', edit_countrydb_path(countrydb) %></td>-->
+<!--            <td><%#= link_to 'Destroy', countrydb, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+    <%= link_to 'New Countrydb', new_countrydb_path %>
+  </div>
+</head>
