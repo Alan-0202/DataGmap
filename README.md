@@ -32,4 +32,50 @@ devise
 https://devcenter.heroku.com/articles/getting-started-with-rails6
 App url: https://whispering-meadow-07108.herokuapp.com/
 
+## Security
+1. use activeadmin
+2. use devise create user
+3. use csrf_token
+4. SQL Injection ? 
+ 1) Direct 404 for a function interface that the user passes a parameter to maliciously access.
+ `  # GET /fictions/1
+  # GET /fictions/1.json
+  def show
 
+    not_found
+  end`
+  2)Receives the parameters passed by the user, but is validated by the front-end JS.
+  '
+   def search
+    name = params[:name]
+  end
+  '
+  '<script>
+    window['countries'] = [
+        'Afghanistan',
+        'Albania',
+        'Algeria',
+        'Andorra',
+        'Angola',
+        'Antigua & Barbuda',
+        'Argentina',
+        'Armenia',
+        'Australia',
+        'Austria',
+        'Azerbaijan',
+        'Bahamas',
+        'Bahrain',
+        'Bangladesh',
+        'Barbados',
+        .
+        .
+        .
+        .
+  </script>
+  '
+  
+  5 Session ?
+  1) Session information is stored in the database
+  'Project::Application.config.session_store :active_record_store'
+  2) User devise method:
+  'before_action :authenticate_user!'
