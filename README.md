@@ -38,12 +38,12 @@ App url: https://whispering-meadow-07108.herokuapp.com/
 3. use csrf_token
 4. SQL Injection ? 
  1) Direct 404 for a function interface that the user passes a parameter to maliciously access.
- `  # GET /fictions/1
-  # GET /fictions/1.json
+ ` 
   def show
 
     not_found
-  end`
+  end
+  `
   2)Receives the parameters passed by the user, but is validated by the front-end JS.
   '
    def search
